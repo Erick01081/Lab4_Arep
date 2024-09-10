@@ -3,10 +3,7 @@ package edu.escuelaing.arem.ASE.app;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -31,5 +28,10 @@ public class LogController {
             logRepository.save(entry);
             System.out.println("Saved entry: " + entry);
             return logRepository.findTop10ByOrderByTimestampDesc();
+        }
+
+        @GetMapping
+        public String getEntries() {
+            return "Hola";
         }
     }

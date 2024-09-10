@@ -9,9 +9,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 @RequestMapping("/api")
 public class LoadBalancerController {
     private final String[] logServices = {
-            "http://lg1:8080/log/entries",
-            "http://lg2:8080/log/entries",
-            "http://lg3:8080/log/entries"
+            "http://logservice1:8080/log/entries",
+            "http://logservice2:8080/log/entries",
+            "http://logservice3:8080/log/entries"
     };
     private final AtomicInteger counter = new AtomicInteger(0);
     private final RestTemplate restTemplate = new RestTemplate();

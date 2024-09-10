@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
   db:
-    image: mongo:latest
+    build:
+      context: .
+      dockerfile: Dockerfile # Usa el Dockerfile con tu configuración personalizada de MongoDB
     container_name: mongodb
     ports:
       - "27017:27017"
@@ -15,7 +17,6 @@ services:
     restart: unless-stopped
     networks:
       - app-network
-
 
   logservice1:
     build:
@@ -30,12 +31,9 @@ services:
         aliases:
           - lg1
     environment:
-      - SPRING_DATA_MONGODB_URI=mongodb://admin:erick123@mongodb:27017/
-      - SPRING_DATA_MONGODB_DATABASE=logdb
+      - SPRING_DATA_MONGODB_URI=mongodb://admin:erick123@mongodb:27017/logdb
       - SPRING_DATA_MONGODB_USERNAME=admin
       - SPRING_DATA_MONGODB_PASSWORD=erick123
-      - SPRING_DATA_MONGODB_PORT=27017
-      - SPRING_DATA_MONGODB_HOST=mongodb
 
   logservice2:
     build:
@@ -50,12 +48,9 @@ services:
         aliases:
           - lg2
     environment:
-      - SPRING_DATA_MONGODB_URI=mongodb://admin:erick123@mongodb:27017/
-      - SPRING_DATA_MONGODB_DATABASE=logdb
+      - SPRING_DATA_MONGODB_URI=mongodb://admin:erick123@mongodb:27017/logdb
       - SPRING_DATA_MONGODB_USERNAME=admin
       - SPRING_DATA_MONGODB_PASSWORD=erick123
-      - SPRING_DATA_MONGODB_PORT=27017
-      - SPRING_DATA_MONGODB_HOST=mongodb
 
   logservice3:
     build:
@@ -70,12 +65,9 @@ services:
         aliases:
           - lg3
     environment:
-      - SPRING_DATA_MONGODB_URI=mongodb://admin:erick123@mongodb:27017/
-      - SPRING_DATA_MONGODB_DATABASE=logdb
+      - SPRING_DATA_MONGODB_URI=mongodb://admin:erick123@mongodb:27017/logdb
       - SPRING_DATA_MONGODB_USERNAME=admin
       - SPRING_DATA_MONGODB_PASSWORD=erick123
-      - SPRING_DATA_MONGODB_PORT=27017
-      - SPRING_DATA_MONGODB_HOST=mongodb
 
   app-lb-roundrobin:
     build:

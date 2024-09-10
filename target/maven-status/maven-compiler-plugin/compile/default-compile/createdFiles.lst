@@ -1,0 +1,11 @@
+edu\escuelaing\arem\ASE\app\RoundRobin\AppLbRoundRobinApplication.class
+edu\escuelaing\arem\ASE\app\LogRepository.class
+edu\escuelaing\arem\ASE\app\MongoProperties.class
+edu\escuelaing\arem\ASE\app\MongoConfig.class
+edu\escuelaing\arem\ASE\app\RoundRobin\LoadBalancerController.class
+edu\escuelaing\arem\ASE\app\RoundRobin\WebController.class
+edu\escuelaing\arem\ASE\app\LogServiceApplication.class
+edu\escuelaing\arem\ASE\app\AppConfig.class
+edu\escuelaing\arem\ASE\app\LogController.class
+edu\escuelaing\arem\ASE\app\LogEntry.class
+edu\escuelaing\arem\ASE\app\WebConfig.class

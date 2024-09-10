@@ -104,8 +104,6 @@ The application is designed to run on AWS EC2. Ensure that the EC2 instance has 
 - MongoDB - Database for message storage
 - Bootstrap - Front-end framework for the web client
 
-## Contributing
-
 
 ## Authors
 
